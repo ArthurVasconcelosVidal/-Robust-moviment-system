@@ -166,6 +166,10 @@ GameObject:
   - component: {fileID: 552605021}
   - component: {fileID: 552605023}
   - component: {fileID: 552605022}
+  - component: {fileID: 552605024}
+  - component: {fileID: 552605027}
+  - component: {fileID: 552605026}
+  - component: {fileID: 552605025}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -218,6 +222,62 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &552605024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552605020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483e5a0a4532d714db87c6aaecf860bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movimentManager: {fileID: 552605027}
+  inputManager: {fileID: 552605025}
+  actionManager: {fileID: 552605026}
+  rigidbody: {fileID: 552605022}
+  meshObject: {fileID: 40095722}
+--- !u!114 &552605025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552605020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d09ff08f8b1674e86bff280b1da24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftStick: {x: 0, y: 0}
+  stickPerforming: 0
+--- !u!114 &552605026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552605020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372b15f3e21de414cbc0e89a575c09ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &552605027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552605020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a7c30a845eb74bba8c775f72a9de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 552605024}
 --- !u!1 &1314800587
 GameObject:
   m_ObjectHideFlags: 0

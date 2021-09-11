@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class PlayerManager : MonoBehaviour{
+    [SerializeField] MovimentManager movimentManager;
+    [SerializeField] InputManager inputManager;
+    [SerializeField] ActionManager actionManager;
+    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] GameObject meshObject;
+
+    public MovimentManager GetMovimentManager() {
+        return movimentManager;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public InputManager GetInputManager(){
+        return inputManager;
     }
+    public ActionManager GetActionManager(){
+        return actionManager;
+    }
+    public Rigidbody GetRigidbody(){
+        return rigidbody;
+    }
+
+    public GameObject GetMeshObject() {
+        return meshObject;
+    }
+
 }
