@@ -10,7 +10,8 @@ public class InputManager : MonoBehaviour{
 
     void Awake(){
         inputControl = new InputControl();
-
+        
+        //LeftStick
         inputControl.Moviment.LeftStick.performed += ctx => {
             leftStick = ctx.ReadValue<Vector2>();
             stickPerforming = leftStick.x != 0 || leftStick.y != 0;
@@ -18,6 +19,8 @@ public class InputManager : MonoBehaviour{
         inputControl.Moviment.LeftStick.canceled += ctx =>{
             stickPerforming = false;
         };
+
+        //ActionButton
     }
     
     void OnEnable(){

@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour{
     [SerializeField] ActionManager actionManager;
     [SerializeField] Rigidbody rigidbody;
     [SerializeField] GameObject meshObject;
+    [SerializeField] Collider playerCollider;
 
     public MovimentManager GetMovimentManager() {
         return movimentManager;
@@ -25,6 +26,14 @@ public class PlayerManager : MonoBehaviour{
 
     public GameObject GetMeshObject() {
         return meshObject;
+    }
+
+    public bool IsGrounded(){
+        RaycastHit hitGround;
+        if (Physics.Raycast(transform.position, -transform.up, out hitGround, playerCollider.bounds.extents.y + 0.1f) && hitGround.transform.gameObject.tag.Contains("Ground"))
+            return true;
+        else 
+            return false;
     }
 
 }

@@ -25,6 +25,22 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ActionButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""900d921f-214c-4d82-8097-243964208f34"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RunButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""202adf05-83e6-47ca-b104-5a33a5ee3c1b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -93,6 +109,50 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""action"": ""LeftStick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4583d4c-e26e-4684-ac8e-a2dd37bdfb4d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f265cc26-3815-4a9f-9ec9-8db67ebfebc2"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""939afb94-7686-4136-8a9a-dc0ed0632d84"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RunButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0229de78-399f-4c6f-84b7-f1376607592f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RunButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -102,6 +162,8 @@ public class @InputControl : IInputActionCollection, IDisposable
         // Moviment
         m_Moviment = asset.FindActionMap("Moviment", throwIfNotFound: true);
         m_Moviment_LeftStick = m_Moviment.FindAction("LeftStick", throwIfNotFound: true);
+        m_Moviment_ActionButton = m_Moviment.FindAction("ActionButton", throwIfNotFound: true);
+        m_Moviment_RunButton = m_Moviment.FindAction("RunButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -152,11 +214,15 @@ public class @InputControl : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Moviment;
     private IMovimentActions m_MovimentActionsCallbackInterface;
     private readonly InputAction m_Moviment_LeftStick;
+    private readonly InputAction m_Moviment_ActionButton;
+    private readonly InputAction m_Moviment_RunButton;
     public struct MovimentActions
     {
         private @InputControl m_Wrapper;
         public MovimentActions(@InputControl wrapper) { m_Wrapper = wrapper; }
         public InputAction @LeftStick => m_Wrapper.m_Moviment_LeftStick;
+        public InputAction @ActionButton => m_Wrapper.m_Moviment_ActionButton;
+        public InputAction @RunButton => m_Wrapper.m_Moviment_RunButton;
         public InputActionMap Get() { return m_Wrapper.m_Moviment; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -169,6 +235,12 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @LeftStick.started -= m_Wrapper.m_MovimentActionsCallbackInterface.OnLeftStick;
                 @LeftStick.performed -= m_Wrapper.m_MovimentActionsCallbackInterface.OnLeftStick;
                 @LeftStick.canceled -= m_Wrapper.m_MovimentActionsCallbackInterface.OnLeftStick;
+                @ActionButton.started -= m_Wrapper.m_MovimentActionsCallbackInterface.OnActionButton;
+                @ActionButton.performed -= m_Wrapper.m_MovimentActionsCallbackInterface.OnActionButton;
+                @ActionButton.canceled -= m_Wrapper.m_MovimentActionsCallbackInterface.OnActionButton;
+                @RunButton.started -= m_Wrapper.m_MovimentActionsCallbackInterface.OnRunButton;
+                @RunButton.performed -= m_Wrapper.m_MovimentActionsCallbackInterface.OnRunButton;
+                @RunButton.canceled -= m_Wrapper.m_MovimentActionsCallbackInterface.OnRunButton;
             }
             m_Wrapper.m_MovimentActionsCallbackInterface = instance;
             if (instance != null)
@@ -176,6 +248,12 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @LeftStick.started += instance.OnLeftStick;
                 @LeftStick.performed += instance.OnLeftStick;
                 @LeftStick.canceled += instance.OnLeftStick;
+                @ActionButton.started += instance.OnActionButton;
+                @ActionButton.performed += instance.OnActionButton;
+                @ActionButton.canceled += instance.OnActionButton;
+                @RunButton.started += instance.OnRunButton;
+                @RunButton.performed += instance.OnRunButton;
+                @RunButton.canceled += instance.OnRunButton;
             }
         }
     }
@@ -183,5 +261,7 @@ public class @InputControl : IInputActionCollection, IDisposable
     public interface IMovimentActions
     {
         void OnLeftStick(InputAction.CallbackContext context);
+        void OnActionButton(InputAction.CallbackContext context);
+        void OnRunButton(InputAction.CallbackContext context);
     }
 }
