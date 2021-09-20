@@ -206,7 +206,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.2
+  m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &552605024
@@ -265,9 +265,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerManager: {fileID: 552605024}
   groundedGravityForce: -0.5
-  normalGravityForce: -9.8
+  normalGravityForce: -30
   maxGravityForce: 100
   minGravityForce: -100
+  gravityForce: {x: 0, y: 0, z: 0}
   characterState: 0
   movimentVelocity: 5
   rotationSpeed: 20
@@ -277,8 +278,6 @@ MonoBehaviour:
   inJump: 0
   timeToApex: 0
   iniJumpVelocity: 0
-  aceleration: {x: 0, y: 0, z: 0}
-  currentPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1108345118
 GameObject:
   m_ObjectHideFlags: 0

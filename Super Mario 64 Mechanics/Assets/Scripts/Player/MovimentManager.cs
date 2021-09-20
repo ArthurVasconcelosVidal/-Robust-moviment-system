@@ -17,23 +17,22 @@ public class MovimentManager : MonoBehaviour{
     [SerializeField] float normalGravityForce = -9.8f;
     [SerializeField] float maxGravityForce = 100;
     [SerializeField] float minGravityForce = -100;
-    [SerializeField] Vector3 gravityForce;
+    [SerializeField] Vector3 gravityForce; //Serialized for Debug
 
     [Header("Moviment Variables")]
-    [SerializeField] CharacterMovimentState characterState;
+    [SerializeField] CharacterMovimentState characterState; //Serialized for Debug
     [SerializeField] float movimentVelocity;
     [SerializeField] [Range(1, 50)] float rotationSpeed = 25;
-    [SerializeField] Vector2 stickDirection;
+    [SerializeField] Vector2 stickDirection; //Serialized for Debug
 
     //JumpVariables
     [Header("Jump Variables")]
     [SerializeField] float maxJumpTime;
     [SerializeField] float maxJumpHeight;
-    [SerializeField] bool inJump;
-
-    [SerializeField] float timeToApex;
-    float jumpGravity;
-    [SerializeField]float iniJumpVelocity;
+    [SerializeField] bool inJump; //Serialized for Debug
+    [SerializeField] float timeToApex; //Serialized for Debug
+    [SerializeField] float jumpGravity; //Serialized for Debug
+    [SerializeField] float iniJumpVelocity; //Serialized for Debug
 
     void Awake(){
         SetJumpVariabeles();
@@ -48,12 +47,10 @@ public class MovimentManager : MonoBehaviour{
         Vector3 finalDirection = RelativeToCamDirection(stickDirection);
         if (finalDirection != Vector3.zero) MeshRotation(finalDirection);
 
-        finalDirection += gravityForce;
+        Vector3 moviment = finalDirection * movimentVelocity;
+        moviment += gravityForce;
 
-        playerManager.GetCharacterController().Move(finalDirection * movimentVelocity * Time.fixedDeltaTime);
-
-        //aceleration = aceleration * (Vector3.one);
-        //playerManager.GetRigidbody().MovePosition(transform.position + finalDirection * movimentVelocity * Time.deltaTime);
+        playerManager.GetCharacterController().Move(moviment * Time.fixedDeltaTime);
     }
 
     void SetJumpVariabeles() {
