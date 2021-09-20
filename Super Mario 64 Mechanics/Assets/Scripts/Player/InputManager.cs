@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour{
+    [SerializeField] PlayerManager playerManager;
     InputControl inputControl;
     Vector2 leftStick; 
     bool stickPerforming;
@@ -17,10 +18,14 @@ public class InputManager : MonoBehaviour{
             stickPerforming = leftStick.x != 0 || leftStick.y != 0;
         };
         inputControl.Moviment.LeftStick.canceled += ctx =>{
+            leftStick = ctx.ReadValue<Vector2>();
             stickPerforming = false;
         };
 
         //ActionButton
+        inputControl.Moviment.ActionButton.performed += ctx =>{
+            playerManager.GetMovimentManager().Jump(); 
+        };
     }
     
     void OnEnable(){
@@ -31,9 +36,8 @@ public class InputManager : MonoBehaviour{
         inputControl.Moviment.Disable();
     }
 
-    public bool LeftStickPerforming(out Vector2 stickValue) {
-        stickValue = leftStick;
-        return stickPerforming;
+    public Vector2 LeftStickPerforming() {
+        return leftStick;
     }
 
 

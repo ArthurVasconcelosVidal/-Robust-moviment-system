@@ -28,12 +28,8 @@ public class PlayerManager : MonoBehaviour{
         return meshObject;
     }
 
-    public bool IsGrounded(){
-        RaycastHit hitGround;
-        if (Physics.Raycast(transform.position, -transform.up, out hitGround, playerCollider.bounds.extents.y + 0.1f) && hitGround.transform.gameObject.tag.Contains("Ground"))
-            return true;
-        else 
-            return false;
+    public Collider GetCollider() {
+        return playerCollider;
     }
 
 }
