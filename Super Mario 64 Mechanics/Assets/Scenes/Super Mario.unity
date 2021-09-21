@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerManager: {fileID: 552605024}
   groundedGravityForce: -0.5
-  normalGravityForce: -30
+  normalGravityForce: -60
   maxGravityForce: 100
   minGravityForce: -100
   gravityForce: {x: 0, y: 0, z: 0}
@@ -273,11 +273,6 @@ MonoBehaviour:
   movimentVelocity: 5
   rotationSpeed: 20
   stickDirection: {x: 0, y: 0}
-  maxJumpTime: 0.5
-  maxJumpHeight: 5
-  inJump: 0
-  timeToApex: 0
-  iniJumpVelocity: 0
 --- !u!1 &1108345118
 GameObject:
   m_ObjectHideFlags: 0

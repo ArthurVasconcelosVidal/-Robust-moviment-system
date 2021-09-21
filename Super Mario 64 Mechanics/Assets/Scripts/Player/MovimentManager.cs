@@ -43,15 +43,14 @@ public class MovimentManager : MonoBehaviour{
 
     //JumpVariables
     [Header("Jump Variables")]
-    float timeToReset = 1;
-    JumpForces firstJump = new JumpForces(0.2f, 3);
-    JumpForces secondJump = new JumpForces(0.6f, 6);
-    JumpForces thirdJump = new JumpForces(1, 12);
-    int jumpCount = 0;
-    int totalJumps = 3;
+    JumpForces firstJump = new JumpForces(0.5f, 5);
+    JumpForces secondJump = new JumpForces(0.6f, 7);
+    JumpForces thirdJump = new JumpForces(0.7f, 9);
     float jumpGravity;
     float fallMultiplier = 1;
-    bool inJump;
+    int jumpCount = 0;
+    bool inJump = false;
+    bool toNextJump = false;
 
     void FixedUpdate(){
         SetCharacterState();
@@ -112,6 +111,7 @@ public class MovimentManager : MonoBehaviour{
 
     IEnumerator JumpBehaviour() {
         inJump = true;
+        SetJump();
 
         switch (jumpCount){
             case 1:
@@ -129,26 +129,30 @@ public class MovimentManager : MonoBehaviour{
         }
 
         yield return new WaitForSeconds(0.1f);
-        
         //Diverssificador de gravidade 
         //Melhorar, atualmente o jogador precisa ficar segurando o botão por todo o pulo, deve haver um limite em tempo do botão pressionado para que o pulo seja maximo
-        while (!playerManager.GetCharacterController().isGrounded){
-            if (playerManager.GetInputManager().IsActionButton())
-                fallMultiplier = 1;
-            else {
-                fallMultiplier = 3;
-                break;
-            }
-        }
-
         yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
-        
+        //Melhorar o sistema de condição, o terceiro pulo só pode acontecer se o personagem estiver se mexendo
         inJump = false;
-        
-        if (jumpCount < totalJumps)
+        toNextJump = true;
+        float timeToResetJump = 2;
+        Invoke("ToNextJump", timeToResetJump);
+    }
+
+    void SetJump() {
+        int totalJumps = 3;
+
+        if (jumpCount < totalJumps && toNextJump)
             jumpCount++;
-        else
+        else {
             jumpCount = 1;
+            toNextJump = false;
+        }
+    }
+
+    void ToNextJump() {
+        if (characterState != CharacterMovimentState.inJump)
+            toNextJump = false;
     }
 
     public CharacterMovimentState GetCharacterMovimentState() {
