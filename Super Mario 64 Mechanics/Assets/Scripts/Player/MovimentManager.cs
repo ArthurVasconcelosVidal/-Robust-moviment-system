@@ -8,6 +8,22 @@ public enum CharacterMovimentState{
     isFalling
 }
 
+struct JumpForces{
+    public float maxJumpTime;
+    public float maxJumpHeight;
+    public float timeToApex; 
+    public float jumpGravity; 
+    public float iniJumpVelocity;
+
+    public JumpForces(float maxJumpTime, float maxJumpHeight){
+        this.maxJumpTime = maxJumpTime;
+        this.maxJumpHeight = maxJumpHeight;
+        timeToApex = maxJumpTime / 2;
+        jumpGravity = (-2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
+        iniJumpVelocity = (2 * maxJumpHeight) / timeToApex;
+    }
+}
+
 public class MovimentManager : MonoBehaviour{
     [Header("Player Manager")]
     [SerializeField] PlayerManager playerManager;
@@ -27,19 +43,17 @@ public class MovimentManager : MonoBehaviour{
 
     //JumpVariables
     [Header("Jump Variables")]
-    [SerializeField] float maxJumpTime;
-    [SerializeField] float maxJumpHeight;
-    [SerializeField] bool inJump; //Serialized for Debug
-    [SerializeField] float timeToApex; //Serialized for Debug
-    [SerializeField] float jumpGravity; //Serialized for Debug
-    [SerializeField] float iniJumpVelocity; //Serialized for Debug
-
-    void Awake(){
-        SetJumpVariabeles();
-    }
+    float timeToReset = 1;
+    JumpForces firstJump = new JumpForces(0.2f, 3);
+    JumpForces secondJump = new JumpForces(0.6f, 6);
+    JumpForces thirdJump = new JumpForces(1, 12);
+    int jumpCount = 0;
+    int totalJumps = 3;
+    float jumpGravity;
+    float fallMultiplier = 1;
+    bool inJump;
 
     void FixedUpdate(){
-        SetJumpVariabeles();//debug
         SetCharacterState();
         GravityAplication();
 
@@ -53,19 +67,13 @@ public class MovimentManager : MonoBehaviour{
         playerManager.GetCharacterController().Move(moviment * Time.fixedDeltaTime);
     }
 
-    void SetJumpVariabeles() {
-        timeToApex = maxJumpTime / 2;
-        jumpGravity = (-2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
-        iniJumpVelocity = (2 * maxJumpHeight) / timeToApex;
-    }
-
     void GravityAplication() {
         switch (characterState){
             case CharacterMovimentState.onGround:
                 gravityForce.y = groundedGravityForce;
                 break;
             case CharacterMovimentState.inJump:
-                gravityForce.y += jumpGravity * Time.fixedDeltaTime;
+                gravityForce.y += jumpGravity * fallMultiplier * Time.fixedDeltaTime;
                 break;
             case CharacterMovimentState.isFalling:
                 gravityForce.y += normalGravityForce * Time.fixedDeltaTime;
@@ -104,13 +112,46 @@ public class MovimentManager : MonoBehaviour{
 
     IEnumerator JumpBehaviour() {
         inJump = true;
-        gravityForce.y = iniJumpVelocity;
-        yield return new WaitForSeconds(0.2f);
+
+        switch (jumpCount){
+            case 1:
+                jumpGravity = firstJump.jumpGravity;
+                gravityForce.y = firstJump.iniJumpVelocity;
+                break;
+            case 2:
+                jumpGravity = secondJump.jumpGravity;
+                gravityForce.y = secondJump.iniJumpVelocity;
+                break;
+            case 3:
+                jumpGravity = thirdJump.jumpGravity;
+                gravityForce.y = thirdJump.iniJumpVelocity;
+                break;
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        
+        //Diverssificador de gravidade 
+        //Melhorar, atualmente o jogador precisa ficar segurando o botão por todo o pulo, deve haver um limite em tempo do botão pressionado para que o pulo seja maximo
+        while (!playerManager.GetCharacterController().isGrounded){
+            if (playerManager.GetInputManager().IsActionButton())
+                fallMultiplier = 1;
+            else {
+                fallMultiplier = 3;
+                break;
+            }
+        }
+
         yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
+        
         inJump = false;
+        
+        if (jumpCount < totalJumps)
+            jumpCount++;
+        else
+            jumpCount = 1;
     }
 
-    public CharacterMovimentState ReturnCharacterMovimentState() {
+    public CharacterMovimentState GetCharacterMovimentState() {
         return characterState;
     }
 }
