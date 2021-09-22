@@ -43,14 +43,18 @@ public class MovimentManager : MonoBehaviour{
 
     //JumpVariables
     [Header("Jump Variables")]
-    JumpForces firstJump = new JumpForces(0.5f, 5);
-    JumpForces secondJump = new JumpForces(0.6f, 7);
-    JumpForces thirdJump = new JumpForces(0.7f, 9);
-    float jumpGravity;
-    float fallMultiplier = 1;
-    int jumpCount = 0;
-    bool inJump = false;
-    bool toNextJump = false;
+    [SerializeField] float timeToResetJump = 2;
+    [SerializeField] int actualJump = 0; //Serialized for Debug
+    [SerializeField] float jumpGravity; //Serialized for Debug
+    [SerializeField] bool inJump = false; //Serialized for Debug
+    [SerializeField] bool toNextJump = false; //Serialized for Debug
+    JumpForces[] jumpsList = new JumpForces[3];
+
+    void Awake(){
+        jumpsList[0] = new JumpForces(0.5f, 5); //Jump configuration
+        jumpsList[1] = new JumpForces(0.6f, 7); //Jump configuration
+        jumpsList[2] = new JumpForces(0.7f, 9); //Jump configuration
+    }
 
     void FixedUpdate(){
         SetCharacterState();
@@ -58,6 +62,7 @@ public class MovimentManager : MonoBehaviour{
 
         stickDirection = playerManager.GetInputManager().LeftStickPerforming();
         Vector3 finalDirection = RelativeToCamDirection(stickDirection);
+        
         if (finalDirection != Vector3.zero) MeshRotation(finalDirection);
 
         Vector3 moviment = finalDirection * movimentVelocity;
@@ -72,6 +77,8 @@ public class MovimentManager : MonoBehaviour{
                 gravityForce.y = groundedGravityForce;
                 break;
             case CharacterMovimentState.inJump:
+                float fallMultiplier = 1;
+                if ( !playerManager.GetInputManager().IsActionButton() && gravityForce.y > 0)  fallMultiplier = 1.8f;
                 gravityForce.y += jumpGravity * fallMultiplier * Time.fixedDeltaTime;
                 break;
             case CharacterMovimentState.isFalling:
@@ -111,46 +118,34 @@ public class MovimentManager : MonoBehaviour{
 
     IEnumerator JumpBehaviour() {
         inJump = true;
-        SetJump();
+        actualJump = SetJump();
 
-        switch (jumpCount){
-            case 1:
-                jumpGravity = firstJump.jumpGravity;
-                gravityForce.y = firstJump.iniJumpVelocity;
-                break;
-            case 2:
-                jumpGravity = secondJump.jumpGravity;
-                gravityForce.y = secondJump.iniJumpVelocity;
-                break;
-            case 3:
-                jumpGravity = thirdJump.jumpGravity;
-                gravityForce.y = thirdJump.iniJumpVelocity;
-                break;
-        }
+        jumpGravity = jumpsList[actualJump].jumpGravity;
+        gravityForce.y = jumpsList[actualJump].iniJumpVelocity;
 
         yield return new WaitForSeconds(0.1f);
         //Diverssificador de gravidade 
         //Melhorar, atualmente o jogador precisa ficar segurando o botão por todo o pulo, deve haver um limite em tempo do botão pressionado para que o pulo seja maximo
         yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
-        //Melhorar o sistema de condição, o terceiro pulo só pode acontecer se o personagem estiver se mexendo
+
         inJump = false;
         toNextJump = true;
-        float timeToResetJump = 2;
-        Invoke("ToNextJump", timeToResetJump);
+        StopCoroutine("ToNextJump");
+        StartCoroutine("ToNextJump");
     }
 
-    void SetJump() {
-        int totalJumps = 3;
-
-        if (jumpCount < totalJumps && toNextJump)
-            jumpCount++;
-        else {
-            jumpCount = 1;
-            toNextJump = false;
+    int SetJump(){
+        if (actualJump < jumpsList.Length - 1 && toNextJump){
+            if (actualJump == jumpsList.Length - 2 && stickDirection.magnitude < 0.4f) actualJump = 0;
+            else actualJump++;
         }
+        else actualJump = 0;
+
+        return actualJump;
     }
 
-    void ToNextJump() {
+    IEnumerator ToNextJump() {
+        yield return new WaitForSeconds(timeToResetJump);
         if (characterState != CharacterMovimentState.inJump)
             toNextJump = false;
     }
