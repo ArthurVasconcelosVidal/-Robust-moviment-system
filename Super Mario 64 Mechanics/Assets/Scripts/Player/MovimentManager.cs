@@ -124,8 +124,6 @@ public class MovimentManager : MonoBehaviour{
         gravityForce.y = jumpsList[actualJump].iniJumpVelocity;
 
         yield return new WaitForSeconds(0.1f);
-        //Diverssificador de gravidade 
-        //Melhorar, atualmente o jogador precisa ficar segurando o botão por todo o pulo, deve haver um limite em tempo do botão pressionado para que o pulo seja maximo
         yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
 
         inJump = false;
