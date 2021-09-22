@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour {
     [SerializeField] PlayerManager playerManager;
     InputControl inputControl;
-    Vector2 leftStick;
-    bool stickPerforming;
+    [SerializeField] Vector2 leftStick; //Serialized for Debug
+    [SerializeField] Vector2 rightStick; //Serialized for Debug
     bool isActionPressed;
 
     void Awake() {
@@ -16,11 +16,17 @@ public class InputManager : MonoBehaviour {
         //LeftStick
         inputControl.Moviment.LeftStick.performed += ctx => {
             leftStick = ctx.ReadValue<Vector2>();
-            stickPerforming = leftStick.x != 0 || leftStick.y != 0;
         };
         inputControl.Moviment.LeftStick.canceled += ctx => {
             leftStick = ctx.ReadValue<Vector2>();
-            stickPerforming = false;
+        };
+
+        //RightStick
+        inputControl.Moviment.RightSitck.performed += ctx => {
+            rightStick = ctx.ReadValue<Vector2>();
+        };
+        inputControl.Moviment.RightSitck.canceled += ctx => {
+            rightStick = ctx.ReadValue<Vector2>();
         };
 
         //ActionButton
@@ -31,6 +37,8 @@ public class InputManager : MonoBehaviour {
         inputControl.Moviment.ActionButton.canceled += ctx => {
             isActionPressed = false;
         };
+
+
     }
 
     void OnEnable() {
@@ -43,6 +51,10 @@ public class InputManager : MonoBehaviour {
 
     public Vector2 LeftStickPerforming() {
         return leftStick;
+    }
+
+    public Vector2 RightStickPerforming() {
+        return rightStick;
     }
 
     public bool IsActionButton() {
