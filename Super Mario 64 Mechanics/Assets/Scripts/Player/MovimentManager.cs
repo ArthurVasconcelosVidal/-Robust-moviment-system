@@ -8,6 +8,22 @@ public enum CharacterMovimentState{
     isFalling
 }
 
+struct JumpForces{
+    public float maxJumpTime;
+    public float maxJumpHeight;
+    public float timeToApex; 
+    public float jumpGravity; 
+    public float iniJumpVelocity;
+
+    public JumpForces(float maxJumpTime, float maxJumpHeight){
+        this.maxJumpTime = maxJumpTime;
+        this.maxJumpHeight = maxJumpHeight;
+        timeToApex = maxJumpTime / 2;
+        jumpGravity = (-2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
+        iniJumpVelocity = (2 * maxJumpHeight) / timeToApex;
+    }
+}
+
 public class MovimentManager : MonoBehaviour{
     [Header("Player Manager")]
     [SerializeField] PlayerManager playerManager;
@@ -17,71 +33,64 @@ public class MovimentManager : MonoBehaviour{
     [SerializeField] float normalGravityForce = -9.8f;
     [SerializeField] float maxGravityForce = 100;
     [SerializeField] float minGravityForce = -100;
+    [SerializeField] Vector3 gravityForce; //Serialized for Debug
 
     [Header("Moviment Variables")]
-    [SerializeField] CharacterMovimentState characterState;
+    [SerializeField] CharacterMovimentState characterState; //Serialized for Debug
     [SerializeField] float movimentVelocity;
-    [SerializeField] Vector2 stickDirection;
+    [SerializeField] [Range(1, 50)] float rotationSpeed = 25;
+    [SerializeField] Vector2 stickDirection; //Serialized for Debug
 
     //JumpVariables
     [Header("Jump Variables")]
-    [SerializeField] float maxJumpTime;
-    [SerializeField] float maxJumpHeight;
-    [SerializeField] bool inJump;
-
-    [SerializeField] float timeToApex;
-    float jumpGravity;
-    [SerializeField]float iniJumpVelocity;
-    
-
-    //Verlet Integration
-    [Header("Verlet Integration (DEBUG)")]
-    [SerializeField] Vector3 aceleration;
-    Vector3 oldPosition;
-    [SerializeField] Vector3 currentPosition;
+    [SerializeField] float timeToResetJump = 2;
+    [SerializeField] int actualJump = 0; //Serialized for Debug
+    [SerializeField] float jumpGravity; //Serialized for Debug
+    [SerializeField] bool inJump = false; //Serialized for Debug
+    [SerializeField] bool toNextJump = false; //Serialized for Debug
+    JumpForces[] jumpsList = new JumpForces[3];
 
     void Awake(){
-        SetJumpVariabeles();
+        jumpsList[0] = new JumpForces(0.5f, 5); //Jump configuration
+        jumpsList[1] = new JumpForces(0.6f, 7); //Jump configuration
+        jumpsList[2] = new JumpForces(0.7f, 9); //Jump configuration
     }
 
     void FixedUpdate(){
-        SetJumpVariabeles();//debug
         SetCharacterState();
         GravityAplication();
 
         stickDirection = playerManager.GetInputManager().LeftStickPerforming();
         Vector3 finalDirection = RelativeToCamDirection(stickDirection);
+        
         if (finalDirection != Vector3.zero) MeshRotation(finalDirection);
-        //aceleration = aceleration * (Vector3.one);
 
-        playerManager.GetRigidbody().MovePosition(transform.position + finalDirection * movimentVelocity * Time.deltaTime);
-    }
+        Vector3 moviment = finalDirection * movimentVelocity;
+        moviment += gravityForce;
 
-    void SetJumpVariabeles() {
-        timeToApex = maxJumpTime / 2;
-        jumpGravity = (-2 * maxJumpHeight) / Mathf.Pow(timeToApex, 2);
-        iniJumpVelocity = (2 * maxJumpHeight) / timeToApex;
+        playerManager.GetCharacterController().Move(moviment * Time.fixedDeltaTime);
     }
 
     void GravityAplication() {
         switch (characterState){
             case CharacterMovimentState.onGround:
-                aceleration.y = groundedGravityForce;
+                gravityForce.y = groundedGravityForce;
                 break;
             case CharacterMovimentState.inJump:
-                aceleration.y += jumpGravity * Time.fixedDeltaTime;
+                float fallMultiplier = 1;
+                if ( !playerManager.GetInputManager().IsActionButton() && gravityForce.y > 0)  fallMultiplier = 1.8f;
+                gravityForce.y += jumpGravity * fallMultiplier * Time.fixedDeltaTime;
                 break;
             case CharacterMovimentState.isFalling:
-                aceleration.y += normalGravityForce * Time.fixedDeltaTime;
+                gravityForce.y += normalGravityForce * Time.fixedDeltaTime;
                 break;
         }
 
-        aceleration.y = Mathf.Clamp(aceleration.y, minGravityForce, maxGravityForce);
-        playerManager.GetRigidbody().velocity = aceleration;
+        gravityForce.y = Mathf.Clamp(gravityForce.y, minGravityForce, maxGravityForce);
     }
 
     void SetCharacterState() {
-        if (IsGrounded() && !inJump)
+        if (playerManager.GetCharacterController().isGrounded && !inJump)
             characterState = CharacterMovimentState.onGround;
         else if (inJump)
             characterState = CharacterMovimentState.inJump;
@@ -90,7 +99,8 @@ public class MovimentManager : MonoBehaviour{
     }
 
     void MeshRotation(Vector3 direction) {
-        playerManager.GetMeshObject().transform.rotation = Quaternion.LookRotation(direction.normalized, transform.up);
+        Quaternion newRotation = Quaternion.LookRotation(direction.normalized, transform.up);
+        playerManager.GetMeshObject().transform.rotation = Quaternion.Slerp(playerManager.GetMeshObject().transform.rotation, newRotation, rotationSpeed * Time.fixedDeltaTime);
     }
 
     Vector3 RelativeToCamDirection(Vector2 stickDir) {
@@ -108,21 +118,37 @@ public class MovimentManager : MonoBehaviour{
 
     IEnumerator JumpBehaviour() {
         inJump = true;
-        aceleration.y = iniJumpVelocity;
-        yield return new WaitForSeconds(0.2f);
-        yield return new WaitUntil(() => IsGrounded());
+        actualJump = SetJump();
+
+        jumpGravity = jumpsList[actualJump].jumpGravity;
+        gravityForce.y = jumpsList[actualJump].iniJumpVelocity;
+
+        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
+
         inJump = false;
+        toNextJump = true;
+        StopCoroutine("ToNextJump");
+        StartCoroutine("ToNextJump");
     }
 
-    public CharacterMovimentState ReturnCharacterMovimentState() {
+    int SetJump(){
+        if (actualJump < jumpsList.Length - 1 && toNextJump){
+            if (actualJump == jumpsList.Length - 2 && stickDirection.magnitude < 0.4f) actualJump = 0;
+            else actualJump++;
+        }
+        else actualJump = 0;
+
+        return actualJump;
+    }
+
+    IEnumerator ToNextJump() {
+        yield return new WaitForSeconds(timeToResetJump);
+        if (characterState != CharacterMovimentState.inJump)
+            toNextJump = false;
+    }
+
+    public CharacterMovimentState GetCharacterMovimentState() {
         return characterState;
-    }
-
-    bool IsGrounded(){
-        RaycastHit hitGround;
-        if (Physics.Raycast(transform.position, -transform.up, out hitGround, playerManager.GetCollider().bounds.extents.y + 0.1f) && hitGround.transform.gameObject.tag.Contains("Ground"))
-            return true;
-        else
-            return false;
     }
 }

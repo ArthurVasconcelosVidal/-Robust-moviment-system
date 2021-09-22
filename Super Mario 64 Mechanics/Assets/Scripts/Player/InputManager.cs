@@ -3,36 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour{
+public class InputManager : MonoBehaviour {
     [SerializeField] PlayerManager playerManager;
     InputControl inputControl;
-    Vector2 leftStick; 
+    Vector2 leftStick;
     bool stickPerforming;
+    bool isActionPressed;
 
-    void Awake(){
+    void Awake() {
         inputControl = new InputControl();
-        
+
         //LeftStick
         inputControl.Moviment.LeftStick.performed += ctx => {
             leftStick = ctx.ReadValue<Vector2>();
             stickPerforming = leftStick.x != 0 || leftStick.y != 0;
         };
-        inputControl.Moviment.LeftStick.canceled += ctx =>{
+        inputControl.Moviment.LeftStick.canceled += ctx => {
             leftStick = ctx.ReadValue<Vector2>();
             stickPerforming = false;
         };
 
         //ActionButton
-        inputControl.Moviment.ActionButton.performed += ctx =>{
-            playerManager.GetMovimentManager().Jump(); 
+        inputControl.Moviment.ActionButton.started += ctx => {
+            playerManager.GetMovimentManager().Jump();
+            isActionPressed = true;
+        };
+        inputControl.Moviment.ActionButton.canceled += ctx => {
+            isActionPressed = false;
         };
     }
-    
-    void OnEnable(){
+
+    void OnEnable() {
         inputControl.Moviment.Enable();
     }
 
-    void OnDisable(){
+    void OnDisable() {
         inputControl.Moviment.Disable();
     }
 
@@ -40,5 +45,7 @@ public class InputManager : MonoBehaviour{
         return leftStick;
     }
 
-
+    public bool IsActionButton() {
+        return isActionPressed;
+    }
 }
