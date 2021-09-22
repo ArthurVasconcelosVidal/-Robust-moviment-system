@@ -684,3 +684,407 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.067237 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.10 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
+Mono: successfully reloaded assembly
+- Completed reload, in  2.029 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2030ms)
+		BeginReloadAssembly (207ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (66ms)
+		EndReloadAssembly (1711ms)
+			LoadAssemblies (191ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (653ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (607ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (133ms)
+				ProcessInitializeOnLoadAttributes (432ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (21ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 9.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4897 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 189.4 MB.
+System memory in use after: 184.5 MB.
+
+Unloading 90 unused Assets to reduce memory usage. Loaded Objects now: 5372.
+Total: 7.648500 ms (FindLiveObjects: 0.626700 ms CreateObjectMapping: 0.593900 ms MarkObjects: 4.276700 ms  DeleteObjects: 2.149300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 486.195836 seconds.
+  path: Assets/Jammo-Character/Textures/Alternates
+  artifactKey: Guid(87ab5bf0126ba3c47ab31192108fc418) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/Alternates using Guid(87ab5bf0126ba3c47ab31192108fc418) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'cfaa8040d24e8ef7b7e87fd3ac7f8e87') in 0.087604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Jammo-Character/Models/Jammo_LowPoly.fbx
+  artifactKey: Guid(82a2914d8f86c62488456950c8330e38) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Models/Jammo_LowPoly.fbx using Guid(82a2914d8f86c62488456950c8330e38) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '81e1bcd032720b55a486155c4b83ce39') in 0.229387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000454 seconds.
+  path: Assets/Jammo-Character/Materials/m_jammo_eyes.mat
+  artifactKey: Guid(d5c0dc78f40c06c4e9356a3218da955b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Materials/m_jammo_eyes.mat using Guid(d5c0dc78f40c06c4e9356a3218da955b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '5c1713329dd7b1b0f7a3f9748087b98d') in 0.021838 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000538 seconds.
+  path: Assets/Jammo-Character/Textures
+  artifactKey: Guid(d15049d3ea55e7b408b3c08a576b11a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures using Guid(d15049d3ea55e7b408b3c08a576b11a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'fb1bd78f744ea4b22178e251cb9cedd7') in 0.010236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000515 seconds.
+  path: Assets/Jammo-Character
+  artifactKey: Guid(b130b3352bc777747a941febc7e17e1d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character using Guid(b130b3352bc777747a941febc7e17e1d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f872e357717ded316d436d8d2880d01d') in 0.023532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000464 seconds.
+  path: Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_AO.png
+  artifactKey: Guid(6a0fb4aa4de843c45a776e5a4ac9dd69) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_AO.png using Guid(6a0fb4aa4de843c45a776e5a4ac9dd69) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8dec28bf3938e6a1e4fa45d16dc6030b') in 0.055001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Jammo-Character/Textures/Alternates/t_jammo_black.psd
+  artifactKey: Guid(c9fd4ccfc3404b04eae3cd87e40a8e2e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/Alternates/t_jammo_black.psd using Guid(c9fd4ccfc3404b04eae3cd87e40a8e2e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '342b0b5dbd81ad88561368f6a1afdecf') in 0.055130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Jammo-Character/Files/eyes_vector.ai
+  artifactKey: Guid(8e178b41568776745973f0c261131ca5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Files/eyes_vector.ai using Guid(8e178b41568776745973f0c261131ca5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '687b5be609819a9e25fd2ea8e4a20232') in 0.018599 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/Jammo-Character/Models
+  artifactKey: Guid(9a9668dd0126a234db37aeb2e80695fa) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Models using Guid(9a9668dd0126a234db37aeb2e80695fa) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '213c8d2338c950f71309a4929e76d88c') in 0.010980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000341 seconds.
+  path: Assets/Jammo-Character/Materials
+  artifactKey: Guid(bed38063483647a43b9793440e0e391d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Materials using Guid(bed38063483647a43b9793440e0e391d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f31fcc9aab645fb61b1598e40b493264') in 0.011334 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/Jammo-Character/Materials/m_jammo_metal.mat
+  artifactKey: Guid(60c2f0e0aaa8f8d4e9d23d7e3768653b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Materials/m_jammo_metal.mat using Guid(60c2f0e0aaa8f8d4e9d23d7e3768653b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9054177e275b3842c17bafa6d56f85e9') in 0.015730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_Normal.png
+  artifactKey: Guid(f6c18262b3c0eba4bb830f3d91682a4f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_Normal.png using Guid(f6c18262b3c0eba4bb830f3d91682a4f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '3c76f12852dd76b66febf3fe62876957') in 0.015168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000416 seconds.
+  path: Assets/Jammo-Character/Materials/m_ground.mat
+  artifactKey: Guid(ac02e0546055b854f8600e1708139ff8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Materials/m_ground.mat using Guid(ac02e0546055b854f8600e1708139ff8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e66a2c0ee7599a374e3687e6c4c0855a') in 0.018581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/Jammo-Character/Files
+  artifactKey: Guid(79685d3e0c5b4174a8aa832dcc2f4038) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Files using Guid(79685d3e0c5b4174a8aa832dcc2f4038) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '18b98e426830fcff9ced9cc5619f160f') in 0.018683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000370 seconds.
+  path: Assets/Jammo-Character/Textures/jammo_eyes.png
+  artifactKey: Guid(09beef63c41c25b458d2f95fdfd9e0e5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/jammo_eyes.png using Guid(09beef63c41c25b458d2f95fdfd9e0e5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '4c4f768bcaf0ecb37d0aee1e27afea95') in 0.014639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000444 seconds.
+  path: Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_AlbedoTransparency.png
+  artifactKey: Guid(fb6e06c953f0d8045bc58e0f5a640f07) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_AlbedoTransparency.png using Guid(fb6e06c953f0d8045bc58e0f5a640f07) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '29e63484c9cacc32b997576da6aa78c8') in 0.021396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000391 seconds.
+  path: Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_MetallicSmoothness.png
+  artifactKey: Guid(3a5a871d579c2da4094f823d674595eb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/mixbot_low_mixamo_edit1_MetallicSmoothness.png using Guid(3a5a871d579c2da4094f823d674595eb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '45aa763c752d1439ea4e2d03c4a70b81') in 0.017436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003006 seconds.
+  path: Assets/Jammo-Character/Textures/mixbot1.json
+  artifactKey: Guid(c3a8ef644c409ed4697012135caec542) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/mixbot1.json using Guid(c3a8ef644c409ed4697012135caec542) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8087bc7db95e2eda28fb1d6686d37056') in 0.019143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000621 seconds.
+  path: Assets/Jammo-Character/Textures/Alternates/t_jammo_yellow.psd
+  artifactKey: Guid(f61e83171850a834788a4664dbb54eae) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/Alternates/t_jammo_yellow.psd using Guid(f61e83171850a834788a4664dbb54eae) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '1dcb2d2dba597e83129c01b6ea9da1d7') in 0.014260 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000399 seconds.
+  path: Assets/Jammo-Character/Textures/Alternates/t_jammo_blue.psd
+  artifactKey: Guid(10c532508a2453a48aa766e69193d105) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Textures/Alternates/t_jammo_blue.psd using Guid(10c532508a2453a48aa766e69193d105) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'cb6eed58678260af56bb6ee54a0040dc') in 0.009874 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.510774 seconds.
+  path: Assets/Jammo-Character
+  artifactKey: Guid(b130b3352bc777747a941febc7e17e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character using Guid(b130b3352bc777747a941febc7e17e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7871044f88d809c598baf406657a98e0') in 0.004213 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.777768 seconds.
+  path: Assets/Jammo-Character/Materials
+  artifactKey: Guid(bed38063483647a43b9793440e0e391d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character/Materials using Guid(bed38063483647a43b9793440e0e391d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac155e6a50e87a7472cee1f8f1f81c9d') in 0.014699 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.058768 seconds.
+  path: Assets/Jammo-Character/Materials/m_ground.mat
+  artifactKey: Guid(ac02e0546055b854f8600e1708139ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character/Materials/m_ground.mat using Guid(ac02e0546055b854f8600e1708139ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92232c98ae82e483b8492881d2dad49a') in 0.741066 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Jammo-Character/Materials/m_jammo_eyes.mat
+  artifactKey: Guid(d5c0dc78f40c06c4e9356a3218da955b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character/Materials/m_jammo_eyes.mat using Guid(d5c0dc78f40c06c4e9356a3218da955b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92365db5f25032708a60a367829a2b27') in 0.070563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Jammo-Character/Materials/m_jammo_metal.mat
+  artifactKey: Guid(60c2f0e0aaa8f8d4e9d23d7e3768653b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character/Materials/m_jammo_metal.mat using Guid(60c2f0e0aaa8f8d4e9d23d7e3768653b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbdf3928ee260e782642fd09e5664f48') in 0.103505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 85.406150 seconds.
+  path: Assets/Jammo-Character/Models
+  artifactKey: Guid(9a9668dd0126a234db37aeb2e80695fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character/Models using Guid(9a9668dd0126a234db37aeb2e80695fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f66a5349b753030f1e2a7d2ee6add86d') in 0.008128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.020879 seconds.
+  path: Assets/Jammo-Character/Models/Jammo_LowPoly.fbx
+  artifactKey: Guid(82a2914d8f86c62488456950c8330e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character/Models/Jammo_LowPoly.fbx using Guid(82a2914d8f86c62488456950c8330e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef9e38fb45a82ceb1e96e57f9eb84872') in 0.818367 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.027723 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
+Mono: successfully reloaded assembly
+- Completed reload, in  1.849 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1849ms)
+		BeginReloadAssembly (209ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (59ms)
+		EndReloadAssembly (1538ms)
+			LoadAssemblies (186ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (549ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (533ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (124ms)
+				ProcessInitializeOnLoadAttributes (377ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.08 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4897 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 209.9 MB.
+System memory in use after: 205.2 MB.
+
+Unloading 91 unused Assets to reduce memory usage. Loaded Objects now: 5459.
+Total: 6.876000 ms (FindLiveObjects: 0.802800 ms CreateObjectMapping: 0.649700 ms MarkObjects: 3.413600 ms  DeleteObjects: 2.008500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 20.795332 seconds.
+  path: Assets/Jammo-Character/Models/Jammo_LowPoly.fbx
+  artifactKey: Guid(82a2914d8f86c62488456950c8330e38) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Models/Jammo_LowPoly.fbx using Guid(82a2914d8f86c62488456950c8330e38) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8432bcb66a5e42625fadf02c793efc40') in 0.425331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.104285 seconds.
+  path: Assets/Jammo-Character/Models/Jammo_LowPoly.fbx
+  artifactKey: Guid(82a2914d8f86c62488456950c8330e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jammo-Character/Models/Jammo_LowPoly.fbx using Guid(82a2914d8f86c62488456950c8330e38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69e2c1e1ed8cd5b49c8ea55478313677') in 0.648182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.311628 seconds.
+  path: Assets/Jammo-Character/Materials/m_jammo_metal.mat
+  artifactKey: Guid(60c2f0e0aaa8f8d4e9d23d7e3768653b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Materials/m_jammo_metal.mat using Guid(60c2f0e0aaa8f8d4e9d23d7e3768653b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'c98af8607634cd60d67a6118044d1705') in 0.010332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Assets/Jammo-Character/Materials/m_jammo_eyes.mat
+  artifactKey: Guid(d5c0dc78f40c06c4e9356a3218da955b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Materials/m_jammo_eyes.mat using Guid(d5c0dc78f40c06c4e9356a3218da955b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '2673e674d814fc05f4606e88466a84c0') in 0.011887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000430 seconds.
+  path: Assets/Jammo-Character/Materials/m_ground.mat
+  artifactKey: Guid(ac02e0546055b854f8600e1708139ff8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Jammo-Character/Materials/m_ground.mat using Guid(ac02e0546055b854f8600e1708139ff8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '3ffe8b4299a9b74c7f0fa9b2b3dcd2fc') in 0.015272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000441 seconds.
+  path: Assets/Scenes/Super Mario.unity
+  artifactKey: Guid(a589e661a3c7bfd44ae509d20d10e363) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scenes/Super Mario.unity using Guid(a589e661a3c7bfd44ae509d20d10e363) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '5abc68992cc7ba9a45e3d4f7eecc9460') in 0.012267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 252.518782 seconds.
+  path: Assets/Scenes/Super Mario.unity
+  artifactKey: Guid(a589e661a3c7bfd44ae509d20d10e363) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Scenes/Super Mario.unity using Guid(a589e661a3c7bfd44ae509d20d10e363) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '0286cc23a40f7dcea7f81876f686e805') in 0.021434 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.035134 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.043 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2044ms)
+		BeginReloadAssembly (206ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (63ms)
+		EndReloadAssembly (1733ms)
+			LoadAssemblies (171ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (550ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (553ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (129ms)
+				ProcessInitializeOnLoadAttributes (391ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (17ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.10 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4897 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 210.3 MB.
+System memory in use after: 205.5 MB.
+
+Unloading 90 unused Assets to reduce memory usage. Loaded Objects now: 5498.
+Total: 10.334700 ms (FindLiveObjects: 0.721300 ms CreateObjectMapping: 0.913600 ms MarkObjects: 6.513600 ms  DeleteObjects: 2.184400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 58.528446 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d402b061de3733987d63b9cc3b64de') in 0.012126 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.613046 seconds.
+  path: Assets/Animations
+  artifactKey: Guid(6ce702232deb44e468436ff64be4e8cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations using Guid(6ce702232deb44e468436ff64be4e8cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9e9b28c518ca506b3c0dae24a782bdf') in 0.006777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.912573 seconds.
+  path: Assets/Animations
+  artifactKey: Guid(6ce702232deb44e468436ff64be4e8cf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Animations using Guid(6ce702232deb44e468436ff64be4e8cf) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ed952908671c5fe4ee71df6f76a5b212') in 0.470956 seconds 
