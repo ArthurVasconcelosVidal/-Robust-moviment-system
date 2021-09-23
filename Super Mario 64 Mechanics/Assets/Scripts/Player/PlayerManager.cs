@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour{
     [SerializeField] InputManager inputManager;
     [SerializeField] ActionManager actionManager;
     [SerializeField] CharacterController characterController;
+    [SerializeField] AnimationManager animationManager;
     [SerializeField] GameObject meshObject;
 
     public MovimentManager GetMovimentManager() {
@@ -25,6 +26,10 @@ public class PlayerManager : MonoBehaviour{
 
     public GameObject GetMeshObject() {
         return meshObject;
+    }
+
+    public AnimationManager GetAnimationManager() {
+        return animationManager;
     }
 
 }
