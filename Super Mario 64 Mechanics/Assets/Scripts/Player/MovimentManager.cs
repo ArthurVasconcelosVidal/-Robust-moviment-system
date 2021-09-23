@@ -64,6 +64,7 @@ public class MovimentManager : MonoBehaviour{
         Vector3 finalDirection = RelativeToCamDirection(stickDirection);
         
         if (finalDirection != Vector3.zero) MeshRotation(finalDirection);
+        playerManager.GetAnimationManager().SetMovimentVelocity(finalDirection.magnitude);
 
         Vector3 moviment = finalDirection * movimentVelocity;
         moviment += gravityForce;
@@ -75,6 +76,7 @@ public class MovimentManager : MonoBehaviour{
         switch (characterState){
             case CharacterMovimentState.onGround:
                 gravityForce.y = groundedGravityForce;
+                playerManager.GetAnimationManager().SetOnGround();
                 break;
             case CharacterMovimentState.inJump:
                 float fallMultiplier = 1;
@@ -122,6 +124,7 @@ public class MovimentManager : MonoBehaviour{
 
         jumpGravity = jumpsList[actualJump].jumpGravity;
         gravityForce.y = jumpsList[actualJump].iniJumpVelocity;
+        playerManager.GetAnimationManager().SetJumpAnim(actualJump + 1);
 
         yield return new WaitForSeconds(0.1f);
         yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
