@@ -15,11 +15,11 @@ C:/Projetos GitHub/Super-Mario-64-Mechanics/Super Mario 64 Mechanics
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60065
+56055
 Successfully changed project path to: C:/Projetos GitHub/Super-Mario-64-Mechanics/Super Mario 64 Mechanics
 C:/Projetos GitHub/Super-Mario-64-Mechanics/Super Mario 64 Mechanics
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 151.62 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 153.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.10f1 (b15f561b2cef)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity 2021.1.10f1/Editor/Data/Resources/UnitySubsystems
@@ -35,93 +35,93 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.1.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.1.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.1.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56132
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity 2021.1.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005130 seconds.
+Registered in 0.010579 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 147.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 155.88 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.433 seconds
+- Completed reload, in  5.533 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2433ms)
-		BeginReloadAssembly (95ms)
+	ReloadAssembly (5534ms)
+		BeginReloadAssembly (112ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (677ms)
-			LoadAssemblies (90ms)
+		EndReloadAssembly (742ms)
+			LoadAssemblies (107ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (223ms)
+			SetupTypeCache (255ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (40ms)
-			SetupLoadedEditorAssemblies (346ms)
+			RebuildScriptCaches (41ms)
+			SetupLoadedEditorAssemblies (366ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (147ms)
+				RefreshPlugins (156ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (146ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				ProcessInitializeOnLoadAttributes (152ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.025937 seconds.
+Registered in 0.026883 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 155.55 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 217.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.285 seconds
+- Completed reload, in  5.700 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2285ms)
-		BeginReloadAssembly (270ms)
+	ReloadAssembly (5701ms)
+		BeginReloadAssembly (362ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1921ms)
-			LoadAssemblies (362ms)
+			CreateAndSetChildDomain (58ms)
+		EndReloadAssembly (5176ms)
+			LoadAssemblies (308ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (576ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (81ms)
-			SetupLoadedEditorAssemblies (736ms)
+			SetupTypeCache (1039ms)
+			ReleaseScriptCaches (7ms)
+			RebuildScriptCaches (138ms)
+			SetupLoadedEditorAssemblies (3535ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (156ms)
-				BeforeProcessingInitializeOnLoad (145ms)
-				ProcessInitializeOnLoadAttributes (403ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (18ms)
-				EditorAssembliesLoaded (1ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (217ms)
+				BeforeProcessingInitializeOnLoad (216ms)
+				ProcessInitializeOnLoadAttributes (3061ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
+				AfterProcessingInitializeOnLoad (21ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 2.43 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4835 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 189.8 MB.
 System memory in use after: 187.1 MB.
 
 Unloading 61 unused Assets to reduce memory usage. Loaded Objects now: 5246.
-Total: 10.154500 ms (FindLiveObjects: 0.407400 ms CreateObjectMapping: 0.258200 ms MarkObjects: 7.811100 ms  DeleteObjects: 1.675800 ms)
+Total: 6.447000 ms (FindLiveObjects: 0.524100 ms CreateObjectMapping: 0.505100 ms MarkObjects: 3.824300 ms  DeleteObjects: 1.592000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -135,178 +135,58 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Animations/Anim@Standing_Idle.fbx
-  artifactKey: Guid(a42acb82144aff643ae7e3b541538c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Standing_Idle.fbx using Guid(a42acb82144aff643ae7e3b541538c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea9bc1ef76100fce2dc7f7847643517c') in 0.811875 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.001367 seconds.
-  path: Assets/Animations/Anim@Standing_Idle.fbx
-  artifactKey: Guid(a42acb82144aff643ae7e3b541538c98) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Standing_Idle.fbx using Guid(a42acb82144aff643ae7e3b541538c98) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8ad59cde1f48f4aa8314d6cf7e99a0e1') in 0.654140 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 638.457933 seconds.
-  path: Assets/Animations/Anim@Jump_2.fbx
-  artifactKey: Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Jump_2.fbx using Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43b42ccca52c28b1799ddb3b304bb1d0') in 0.013092 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.898481 seconds.
-  path: Assets/Animations/Anim@Jump_2.fbx
-  artifactKey: Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Jump_2.fbx using Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '0cec4bf9dcc6d41de7c71b1cb1cd384a') in 0.046244 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1322.367515 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe7eb48e308089176fdb456054176e1e') in 0.011387 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.878788 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '58045ebd302ae705ce038c63e625f1ce') in 0.015752 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.626279 seconds.
-  path: Assets/Animations/Anim@Jump_2.fbx
-  artifactKey: Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Jump_2.fbx using Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23e809667dda9253f6cb8003c3607e70') in 0.015066 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000372 seconds.
-  path: Assets/Animations/Anim@Running.fbx
-  artifactKey: Guid(4b3a9a77a73871e4d975630f64af574e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Running.fbx using Guid(4b3a9a77a73871e4d975630f64af574e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdb13324e55149277241c95871adb186') in 0.009296 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000394 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93f349461328000b12d25506d7726405') in 0.013950 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.763533 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '2db906253ba5196882386a2785c2869f') in 0.015598 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000578 seconds.
-  path: Assets/Animations/Anim@Jump_2.fbx
-  artifactKey: Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Jump_2.fbx using Guid(ef9e247c4d180fe41aa5708d0d4fc140) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '017c2abbae71cd8d74d6760aa652379b') in 0.021743 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000374 seconds.
-  path: Assets/Animations/Anim@Running.fbx
-  artifactKey: Guid(4b3a9a77a73871e4d975630f64af574e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Running.fbx using Guid(4b3a9a77a73871e4d975630f64af574e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9d9660985ab9f5bb56e5bb7971fff2b2') in 0.019645 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.152772 seconds.
   path: Assets/Animations/Character Animations.controller
-  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d53d0f8468f3ed883f43415542d63d9') in 0.034387 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 27.619842 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e22ce3eb3960d45099c4f5630f4da2a1') in 0.011972 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.689499 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'b7ffc6468c5eb18174206d5dee16d735') in 0.029251 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 59.296709 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2762a63f0f0538f7ba470cf86f509ed8') in 0.013270 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.882422 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'a0698ffb83110aa11ba54b02bb172955') in 0.032594 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.838990 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51bc6e5a7468bd4f38079a7d179c818a') in 0.011356 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.881908 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e31961e19aa708e355040317af6bb77a') in 0.026558 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14555.639140 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ca8683e7122bfff1de9e5e571183e93') in 0.036095 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.456628 seconds.
-  path: Assets/Animations/Anim@Twist Jump.fbx
-  artifactKey: Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Anim@Twist Jump.fbx using Guid(421f4f23afb098d4a834db395cf5eb73) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e62cfac42f9bb58fd3bf33d92190317b') in 0.042361 seconds 
+  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'c0bba653b26bff4b9764cdce6f82f39c') in 0.390694 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.048989 seconds.
+Registered in 0.050419 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.11 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in 17.821 seconds
+- Completed reload, in  2.865 seconds
 Domain Reload Profiling:
-	ReloadAssembly (17827ms)
-		BeginReloadAssembly (12849ms)
-			ExecutionOrderSort (1ms)
-			DisableScriptedObjects (241ms)
+	ReloadAssembly (2866ms)
+		BeginReloadAssembly (282ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2682ms)
-		EndReloadAssembly (4636ms)
-			LoadAssemblies (523ms)
+			CreateAndSetChildDomain (65ms)
+		EndReloadAssembly (2467ms)
+			LoadAssemblies (191ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (2561ms)
-			ReleaseScriptCaches (5ms)
-			RebuildScriptCaches (149ms)
-			SetupLoadedEditorAssemblies (1209ms)
+			SetupTypeCache (663ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (65ms)
+			SetupLoadedEditorAssemblies (619ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (17ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (348ms)
-				ProcessInitializeOnLoadAttributes (784ms)
-				ProcessInitializeOnLoadMethodAttributes (11ms)
-				AfterProcessingInitializeOnLoad (44ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (137ms)
+				ProcessInitializeOnLoadAttributes (431ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (32ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (26ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.56 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 183.8 MB.
 System memory in use after: 181.2 MB.
 
 Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5249.
-Total: 18.025700 ms (FindLiveObjects: 0.944900 ms CreateObjectMapping: 0.814400 ms MarkObjects: 13.004500 ms  DeleteObjects: 3.258600 ms)
+Total: 7.507000 ms (FindLiveObjects: 1.165500 ms CreateObjectMapping: 0.690700 ms MarkObjects: 4.124500 ms  DeleteObjects: 1.523800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -320,72 +200,54 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1233.103524 seconds.
-  path: Assets/Animations/Character Animations.controller
-  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b718c14018565ab9d7a58bf0459bef0') in 0.285419 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.669315 seconds.
+  Time since last request: 167.752211 seconds.
   path: Assets/Animations/Character Animations.controller
   artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '53f654d5006eb67db66dcfc92aa58e14') in 0.250349 seconds 
+Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'c3fb147f73640579219cd1d658732632') in 0.094283 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 474.414105 seconds.
-  path: Assets/Animations/Character Animations.controller
-  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9157334df791fb144e08b65ffe72fd94') in 0.014029 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.595983 seconds.
+  Time since last request: 57.095664 seconds.
   path: Assets/Animations/Character Animations.controller
   artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19184376846b4ffcdbc720adbff34481') in 0.015616 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 270.744227 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c4ae72a2b615f19811c797632770e32') in 0.033808 seconds 
+Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fa0935e5dffaa0ebcd9c6c57cdd8c30') in 0.048220 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.037985 seconds.
+Registered in 0.016528 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.24 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.309 seconds
+- Completed reload, in  1.772 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3310ms)
-		BeginReloadAssembly (467ms)
+	ReloadAssembly (1773ms)
+		BeginReloadAssembly (214ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (23ms)
+			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (247ms)
-		EndReloadAssembly (2719ms)
-			LoadAssemblies (267ms)
+			CreateAndSetChildDomain (65ms)
+		EndReloadAssembly (1457ms)
+			LoadAssemblies (174ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1166ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (73ms)
-			SetupLoadedEditorAssemblies (849ms)
+			SetupTypeCache (542ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (63ms)
+			SetupLoadedEditorAssemblies (538ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (2ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (131ms)
-				ProcessInitializeOnLoadAttributes (666ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (17ms)
-				EditorAssembliesLoaded (1ms)
+				BeforeProcessingInitializeOnLoad (120ms)
+				ProcessInitializeOnLoadAttributes (386ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
@@ -396,7 +258,7 @@ System memory in use before: 183.9 MB.
 System memory in use after: 181.3 MB.
 
 Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5252.
-Total: 8.234800 ms (FindLiveObjects: 0.725600 ms CreateObjectMapping: 0.515600 ms MarkObjects: 3.829900 ms  DeleteObjects: 3.161900 ms)
+Total: 7.027500 ms (FindLiveObjects: 0.530900 ms CreateObjectMapping: 0.502200 ms MarkObjects: 3.576400 ms  DeleteObjects: 2.416400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -410,449 +272,65 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 353.879178 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '6e2fc19c2db1595b0c8b161993e6bd64') in 0.084647 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1886b4881877d16bdad6821a88425819') in 0.005060 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 95.236361 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25390c074c4f8af169e9946ebab13468') in 0.006390 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.061653 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '42e19ca6fcf44034596d0df8a4afbdeb') in 0.033270 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 120.037218 seconds.
+  Time since last request: 5.888998 seconds.
   path: Assets/Animations/Character Animations.controller
   artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '3b0b727730eeb7c3ee5182b49185fee5') in 0.022222 seconds 
+Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '84638f0687b71615ef01767f4377fbe3') in 0.384927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001578 seconds.
+  path: Assets/Animations/Character Animations.controller
+  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '667de2ea5cee3bfd112e7223829c2446') in 0.050424 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.031795 seconds.
+Registered in 0.017254 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.99 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.11 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.590 seconds
+- Completed reload, in  1.785 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2590ms)
-		BeginReloadAssembly (199ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (65ms)
-		EndReloadAssembly (2241ms)
-			LoadAssemblies (180ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (882ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (68ms)
-			SetupLoadedEditorAssemblies (749ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (127ms)
-				ProcessInitializeOnLoadAttributes (535ms)
-				ProcessInitializeOnLoadMethodAttributes (54ms)
-				AfterProcessingInitializeOnLoad (24ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.05 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 184.0 MB.
-System memory in use after: 181.3 MB.
-
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5255.
-Total: 6.934500 ms (FindLiveObjects: 0.603700 ms CreateObjectMapping: 0.541400 ms MarkObjects: 3.813000 ms  DeleteObjects: 1.974400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 40.404501 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'fea2d4aa7fea8a9a53259c2e12579ca4') in 0.092087 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000340 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2af958e2edf17e3a632f776ca9ff37d3') in 0.003738 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015478 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.80 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.035 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2035ms)
+	ReloadAssembly (1786ms)
 		BeginReloadAssembly (203ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (74ms)
-		EndReloadAssembly (1722ms)
-			LoadAssemblies (171ms)
+			CreateAndSetChildDomain (63ms)
+		EndReloadAssembly (1483ms)
+			LoadAssemblies (169ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (584ms)
+			SetupTypeCache (545ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (129ms)
-			SetupLoadedEditorAssemblies (570ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (154ms)
-				ProcessInitializeOnLoadAttributes (371ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (17ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.00 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 184.0 MB.
-System memory in use after: 181.3 MB.
-
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5258.
-Total: 6.111600 ms (FindLiveObjects: 0.893100 ms CreateObjectMapping: 0.491800 ms MarkObjects: 3.029600 ms  DeleteObjects: 1.695800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 173.773863 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd947db4f6d550cdf780b0f077057161b') in 0.116268 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000437 seconds.
-  path: Assets/Scripts/Player/MovimentManager.cs
-  artifactKey: Guid(cd5a7c30a845eb74bba8c775f72a9de4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/MovimentManager.cs using Guid(cd5a7c30a845eb74bba8c775f72a9de4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ba428e0d2d64016f255c61f4b69faeea') in 0.011466 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000611 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e45133bc787a1f798590215d203d4684') in 0.005697 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.671726 seconds.
-  path: Assets/Animations/Character Animations.controller
-  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3c8940daefa937a0af4d117ef13d89d') in 0.065597 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015104 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.97 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.857 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1858ms)
-		BeginReloadAssembly (193ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (65ms)
-		EndReloadAssembly (1548ms)
-			LoadAssemblies (180ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (575ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (75ms)
-			SetupLoadedEditorAssemblies (550ms)
+			RebuildScriptCaches (63ms)
+			SetupLoadedEditorAssemblies (555ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (122ms)
-				ProcessInitializeOnLoadAttributes (397ms)
+				BeforeProcessingInitializeOnLoad (118ms)
+				ProcessInitializeOnLoadAttributes (404ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (16ms)
+				AfterProcessingInitializeOnLoad (17ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (12ms)
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.30 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 183.8 MB.
-System memory in use after: 181.2 MB.
-
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5261.
-Total: 5.596400 ms (FindLiveObjects: 0.523900 ms CreateObjectMapping: 0.486100 ms MarkObjects: 3.071200 ms  DeleteObjects: 1.513900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 42.615171 seconds.
-  path: Assets/Animations/Character Animations.controller
-  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '434c97f16ddc3758e638822517054ac2') in 0.118634 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.002626 seconds.
-  path: Assets/Animations/Character Animations.controller
-  artifactKey: Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Character Animations.controller using Guid(02974bc12bb46a94ea599a482ff69541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c29e617a13224b6d71d78bcfc7d22394') in 0.031952 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 89.629878 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '6f1315211c9ee7e11a8350e5ec0c53eb') in 0.011749 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.016681 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.02 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.107 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2107ms)
-		BeginReloadAssembly (202ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (65ms)
-		EndReloadAssembly (1805ms)
-			LoadAssemblies (192ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (564ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (68ms)
-			SetupLoadedEditorAssemblies (825ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (120ms)
-				ProcessInitializeOnLoadAttributes (649ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
-				AfterProcessingInitializeOnLoad (18ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.98 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 184.0 MB.
-System memory in use after: 181.4 MB.
+System memory in use after: 181.3 MB.
 
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5264.
-Total: 7.515000 ms (FindLiveObjects: 1.048200 ms CreateObjectMapping: 0.744200 ms MarkObjects: 4.047000 ms  DeleteObjects: 1.673600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 77.963953 seconds.
-  path: Assets/Scripts/Player/AnimationManager.cs
-  artifactKey: Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/AnimationManager.cs using Guid(af21c3190fe88ec4db4933a8a1c365a3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '13b56a6c9cbba76f22a541c2ba2f311d') in 0.089370 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000541 seconds.
-  path: Assets/Scripts/Player/MovimentManager.cs
-  artifactKey: Guid(cd5a7c30a845eb74bba8c775f72a9de4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scripts/Player/MovimentManager.cs using Guid(cd5a7c30a845eb74bba8c775f72a9de4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd073ff028eade42dfea0d5a7b231acfa') in 0.009308 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015360 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.464 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2465ms)
-		BeginReloadAssembly (195ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (59ms)
-		EndReloadAssembly (2166ms)
-			LoadAssemblies (164ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (610ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (101ms)
-			SetupLoadedEditorAssemblies (1092ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (510ms)
-				ProcessInitializeOnLoadAttributes (543ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (19ms)
-				EditorAssembliesLoaded (5ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (36ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.10 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 184.1 MB.
-System memory in use after: 181.4 MB.
-
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5267.
-Total: 8.845900 ms (FindLiveObjects: 0.648600 ms CreateObjectMapping: 0.581000 ms MarkObjects: 5.238700 ms  DeleteObjects: 2.374900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.039736 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Projetos GitHub\Super-Mario-64-Mechanics\Super Mario 64 Mechanics\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.81 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.011 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3013ms)
-		BeginReloadAssembly (541ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (38ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (236ms)
-		EndReloadAssembly (2319ms)
-			LoadAssemblies (331ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (794ms)
-			ReleaseScriptCaches (5ms)
-			RebuildScriptCaches (89ms)
-			SetupLoadedEditorAssemblies (905ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (3ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (170ms)
-				ProcessInitializeOnLoadAttributes (690ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (21ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4733 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 184.1 MB.
-System memory in use after: 181.4 MB.
-
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5270.
-Total: 10.961600 ms (FindLiveObjects: 0.795900 ms CreateObjectMapping: 0.552000 ms MarkObjects: 5.178900 ms  DeleteObjects: 4.432500 ms)
+Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 5255.
+Total: 7.484700 ms (FindLiveObjects: 0.500300 ms CreateObjectMapping: 0.502400 ms MarkObjects: 4.475000 ms  DeleteObjects: 2.005300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 

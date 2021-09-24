@@ -52,8 +52,8 @@ public class MovimentManager : MonoBehaviour{
 
     void Awake(){
         jumpsList[0] = new JumpForces(0.5f, 5); //Jump configuration
-        jumpsList[1] = new JumpForces(0.6f, 7); //Jump configuration
-        jumpsList[2] = new JumpForces(0.7f, 9); //Jump configuration
+        jumpsList[1] = new JumpForces(0.7f, 7); //Jump configuration
+        jumpsList[2] = new JumpForces(0.8f, 10); //Jump configuration
     }
 
     void FixedUpdate(){
