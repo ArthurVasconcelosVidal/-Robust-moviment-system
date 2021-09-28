@@ -18,4 +18,14 @@ public class AnimationManager : MonoBehaviour{
     public void SetMovimentVelocity(float movimentMagnitude) {
         animator.SetFloat("Velocity", movimentMagnitude);
     }
+
+    public void RightTurnAnimation() {
+        animator.SetTrigger("RightTurn");
+    }
+    public void LeftTurnAnimation() {
+        animator.SetTrigger("LeftTurn");
+    }
+    public void HalfTurnAnimation() {
+        animator.SetTrigger("Turn180");
+    }
 }

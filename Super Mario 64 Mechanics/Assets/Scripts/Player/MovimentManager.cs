@@ -33,50 +33,91 @@ public class MovimentManager : MonoBehaviour{
     [SerializeField] float normalGravityForce = -9.8f;
     [SerializeField] float maxGravityForce = 100;
     [SerializeField] float minGravityForce = -100;
-    [SerializeField] Vector3 gravityForce; //Serialized for Debug
+    Vector3 gravityForce;
 
     [Header("Moviment Variables")]
-    [SerializeField] CharacterMovimentState characterState; //Serialized for Debug
-    [SerializeField] float movimentVelocity;
-    [SerializeField] [Range(1, 50)] float rotationSpeed = 25;
-    [SerializeField] Vector2 stickDirection; //Serialized for Debug
-
+    [SerializeField] AnimationCurve movimentProgressionCurve; //Tempo deve descrever o tempo da progressão e o outro eixo ira descrever a evaluação dessa progressão 
+    [SerializeField] float normalMovimentVelocity;
+    [SerializeField] float runningMovimentVelocity;
+    CharacterMovimentState characterState;
+    bool isRunning;
+    float movimentVelocity;
+    float movimentProgression; 
+    float movimentPercent;
+    [SerializeField] [Range(0, 50)] float normalRotationSpeed = 25;
+    float rotationSpeed = 25; 
+    
     //JumpVariables
     [Header("Jump Variables")]
     [SerializeField] float timeToResetJump = 2;
-    [SerializeField] int actualJump = 0; //Serialized for Debug
-    [SerializeField] float jumpGravity; //Serialized for Debug
-    [SerializeField] bool inJump = false; //Serialized for Debug
-    [SerializeField] bool toNextJump = false; //Serialized for Debug
+    [SerializeField] [Range(0, 0.99f)] float toLastJumpMovVelocity;
+    [SerializeField] float inJumpCharacterRotation = 2;
+    int actualJump = 0; 
+    float jumpGravity; 
+    bool inJump = false; 
+    bool toNextJump = false; 
     JumpForces[] jumpsList = new JumpForces[3];
 
     void Awake(){
         jumpsList[0] = new JumpForces(0.5f, 5); //Jump configuration
         jumpsList[1] = new JumpForces(0.7f, 7); //Jump configuration
         jumpsList[2] = new JumpForces(0.8f, 10); //Jump configuration
+        
+        rotationSpeed = normalRotationSpeed;
     }
 
     void FixedUpdate(){
         SetCharacterState();
         GravityAplication();
 
-        stickDirection = playerManager.GetInputManager().LeftStickPerforming();
-        Vector3 finalDirection = RelativeToCamDirection(stickDirection);
-        
-        if (finalDirection != Vector3.zero) MeshRotation(finalDirection);
-        playerManager.GetAnimationManager().SetMovimentVelocity(finalDirection.magnitude);
+        IsRunning();
 
-        Vector3 moviment = finalDirection * movimentVelocity;
+        Vector2 stickDirection = playerManager.GetInputManager().LeftStickPerforming();
+        Vector3 finalDirection = RelativeToCamDirection(stickDirection);
+        Vector3 moviment = Vector3.zero;
+
+        if (finalDirection != Vector3.zero) { 
+            MeshRotation(finalDirection);
+            moviment = (playerManager.GetMeshObject().transform.forward * movimentVelocity) * movimentProgression;
+        }
+
+        movimentPercent = Mathf.InverseLerp(0, movimentVelocity, moviment.magnitude);
+        if (!isRunning) playerManager.GetAnimationManager().SetMovimentVelocity(movimentPercent);
+        else playerManager.GetAnimationManager().SetMovimentVelocity(movimentPercent * 2);
+
         moviment += gravityForce;
 
         playerManager.GetCharacterController().Move(moviment * Time.fixedDeltaTime);
+    }
+
+    /*
+    void BlaBla(Vector3 oldDirection, Vector3 newDirection) {
+        float angle = Vector3.Angle(oldMovimentDirection, newDirection);
+        Debug.Log(angle);
+    }*/
+
+    public void StartMovimentProgression() {
+        StopCoroutine("MovimentProgression");
+        StartCoroutine("MovimentProgression");
+    }
+
+    IEnumerator MovimentProgression() {
+        float maxTime = movimentProgressionCurve.keys[movimentProgressionCurve.length-1].time;
+        float time = 0;
+        movimentProgression = 0;
+        while (time < maxTime){
+            movimentProgression = movimentProgressionCurve.Evaluate(time);
+            time += Time.fixedDeltaTime;
+            yield return null;
+        }
+        yield return null;
     }
 
     void GravityAplication() {
         switch (characterState){
             case CharacterMovimentState.onGround:
                 gravityForce.y = groundedGravityForce;
-                playerManager.GetAnimationManager().SetOnGround();
+                playerManager.GetAnimationManager().SetOnGround();//Tirar daqui
                 break;
             case CharacterMovimentState.inJump:
                 float fallMultiplier = 1;
@@ -112,10 +153,19 @@ public class MovimentManager : MonoBehaviour{
         return finalRelativeToCam;
     }
 
-    public void Jump(){
-        if (characterState == CharacterMovimentState.onGround){
-            StartCoroutine("JumpBehaviour");
+    void IsRunning() {
+        isRunning = playerManager.GetInputManager().IsWestButton();
+        if (isRunning && characterState == CharacterMovimentState.onGround){
+            movimentVelocity = runningMovimentVelocity;
         }
+        else if (characterState == CharacterMovimentState.onGround) {
+            movimentVelocity = normalMovimentVelocity;
+        }
+    } 
+
+    public void Jump(){
+        if (characterState == CharacterMovimentState.onGround)
+            StartCoroutine("JumpBehaviour");
     }
 
     IEnumerator JumpBehaviour() {
@@ -124,10 +174,13 @@ public class MovimentManager : MonoBehaviour{
 
         jumpGravity = jumpsList[actualJump].jumpGravity;
         gravityForce.y = jumpsList[actualJump].iniJumpVelocity;
+        rotationSpeed = inJumpCharacterRotation;
         playerManager.GetAnimationManager().SetJumpAnim(actualJump + 1);
 
         yield return new WaitForSeconds(0.1f);
         yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
+
+        rotationSpeed = normalRotationSpeed;
 
         inJump = false;
         toNextJump = true;
@@ -137,7 +190,7 @@ public class MovimentManager : MonoBehaviour{
 
     int SetJump(){
         if (actualJump < jumpsList.Length - 1 && toNextJump){
-            if (actualJump == jumpsList.Length - 2 && stickDirection.magnitude < 0.4f) actualJump = 0;
+            if (actualJump == jumpsList.Length - 2 && movimentPercent < toLastJumpMovVelocity) actualJump = 0;
             else actualJump++;
         }
         else actualJump = 0;
