@@ -5,7 +5,8 @@ using UnityEngine;
 public enum CharacterMovimentState{
     onGround,
     inJump,
-    isFalling
+    isFalling,
+    inWall
 }
 
 struct JumpForces{
@@ -31,20 +32,24 @@ public class MovimentManager : MonoBehaviour{
     [Header("Gravity Variables")]
     [SerializeField] float groundedGravityForce = -.5f;
     [SerializeField] float normalGravityForce = -9.8f;
+    [SerializeField] float inWallGravityForce;
     [SerializeField] float maxGravityForce = 100;
     [SerializeField] float minGravityForce = -100;
-    Vector3 gravityForce;
+    [SerializeField]Vector3 gravityForce;
 
     [Header("Moviment Variables")]
     [SerializeField] AnimationCurve movimentProgressionCurve; //Tempo deve descrever o tempo da progressão e o outro eixo ira descrever a evaluação dessa progressão 
     [SerializeField] float normalMovimentVelocity;
     [SerializeField] float runningMovimentVelocity;
-    CharacterMovimentState characterState;
+    [SerializeField] [Range(0, 50)] float normalRotationSpeed = 25;
+    bool canMove = true;
+    Vector3 finalDirection;
+    [SerializeField] CharacterMovimentState characterState;
     bool isRunning;
     float movimentVelocity;
     float movimentProgression; 
     float movimentPercent;
-    [SerializeField] [Range(0, 50)] float normalRotationSpeed = 25;
+
     float rotationSpeed = 25; 
     
     //JumpVariables
@@ -52,11 +57,13 @@ public class MovimentManager : MonoBehaviour{
     [SerializeField] float timeToResetJump = 2;
     [SerializeField] [Range(0, 0.99f)] float toLastJumpMovVelocity;
     [SerializeField] float inJumpCharacterRotation = 2;
+    RaycastHit wallJumpHit;
     int actualJump = 0; 
-    float jumpGravity; 
+    [SerializeField]float jumpGravity; 
     bool inJump = false; 
     bool toNextJump = false; 
     JumpForces[] jumpsList = new JumpForces[3];
+    JumpForces wallJump = new JumpForces(1,7);
 
     void Awake(){
         jumpsList[0] = new JumpForces(0.5f, 5); //Jump configuration
@@ -72,12 +79,13 @@ public class MovimentManager : MonoBehaviour{
 
         IsRunning();
 
-        Vector2 stickDirection = playerManager.GetInputManager().LeftStickPerforming();
-        Vector3 finalDirection = RelativeToCamDirection(stickDirection);
+        if (characterState == CharacterMovimentState.onGround) playerManager.GetAnimationManager().SetOnGround();
         Vector3 moviment = Vector3.zero;
+        Vector2 stickDirection = playerManager.GetInputManager().LeftStickPerforming();
+        finalDirection = RelativeToCamDirection(stickDirection);
 
-        if (finalDirection != Vector3.zero) { 
-            MeshRotation(finalDirection);
+        if (finalDirection != Vector3.zero && canMove){
+            MeshRotation(finalDirection, rotationSpeed);
             moviment = (playerManager.GetMeshObject().transform.forward * movimentVelocity) * movimentProgression;
         }
 
@@ -89,12 +97,6 @@ public class MovimentManager : MonoBehaviour{
 
         playerManager.GetCharacterController().Move(moviment * Time.fixedDeltaTime);
     }
-
-    /*
-    void BlaBla(Vector3 oldDirection, Vector3 newDirection) {
-        float angle = Vector3.Angle(oldMovimentDirection, newDirection);
-        Debug.Log(angle);
-    }*/
 
     public void StartMovimentProgression() {
         StopCoroutine("MovimentProgression");
@@ -117,7 +119,6 @@ public class MovimentManager : MonoBehaviour{
         switch (characterState){
             case CharacterMovimentState.onGround:
                 gravityForce.y = groundedGravityForce;
-                playerManager.GetAnimationManager().SetOnGround();//Tirar daqui
                 break;
             case CharacterMovimentState.inJump:
                 float fallMultiplier = 1;
@@ -127,21 +128,42 @@ public class MovimentManager : MonoBehaviour{
             case CharacterMovimentState.isFalling:
                 gravityForce.y += normalGravityForce * Time.fixedDeltaTime;
                 break;
+            case CharacterMovimentState.inWall:
+                gravityForce.y = inWallGravityForce;
+                break;
         }
 
         gravityForce.y = Mathf.Clamp(gravityForce.y, minGravityForce, maxGravityForce);
     }
 
-    void SetCharacterState() {
+    void SetCharacterState(){
         if (playerManager.GetCharacterController().isGrounded && !inJump)
             characterState = CharacterMovimentState.onGround;
+        else if (OnWall())
+            characterState = CharacterMovimentState.inWall;
         else if (inJump)
             characterState = CharacterMovimentState.inJump;
         else
             characterState = CharacterMovimentState.isFalling;
     }
 
-    void MeshRotation(Vector3 direction) {
+    bool OnWall() {
+        float onWallRotationSpeed = 50;
+        float offSet = 0.05f;
+        if (Physics.Raycast(transform.position, finalDirection, out wallJumpHit, playerManager.GetCharacterController().bounds.extents.x + offSet)){
+            MeshRotation(-wallJumpHit.normal, onWallRotationSpeed);
+            playerManager.GetAnimationManager().onWallAnimation(true);
+            canMove = false;
+            return true;
+        }
+        else{
+            playerManager.GetAnimationManager().onWallAnimation(false);
+            canMove = true;
+            return false;
+        }
+    }
+
+    void MeshRotation(Vector3 direction, float rotationSpeed) {
         Quaternion newRotation = Quaternion.LookRotation(direction.normalized, transform.up);
         playerManager.GetMeshObject().transform.rotation = Quaternion.Slerp(playerManager.GetMeshObject().transform.rotation, newRotation, rotationSpeed * Time.fixedDeltaTime);
     }
@@ -153,7 +175,7 @@ public class MovimentManager : MonoBehaviour{
         return finalRelativeToCam;
     }
 
-    void IsRunning() {
+    void IsRunning(){
         isRunning = playerManager.GetInputManager().IsWestButton();
         if (isRunning && characterState == CharacterMovimentState.onGround){
             movimentVelocity = runningMovimentVelocity;
@@ -166,6 +188,8 @@ public class MovimentManager : MonoBehaviour{
     public void Jump(){
         if (characterState == CharacterMovimentState.onGround)
             StartCoroutine("JumpBehaviour");
+        else if (characterState == CharacterMovimentState.inWall)
+            StartCoroutine("WallJumpBehaviour");
     }
 
     IEnumerator JumpBehaviour() {
@@ -178,7 +202,7 @@ public class MovimentManager : MonoBehaviour{
         playerManager.GetAnimationManager().SetJumpAnim(actualJump + 1);
 
         yield return new WaitForSeconds(0.1f);
-        yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded);
+        yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded || OnWall());
 
         rotationSpeed = normalRotationSpeed;
 
@@ -186,6 +210,23 @@ public class MovimentManager : MonoBehaviour{
         toNextJump = true;
         StopCoroutine("ToNextJump");
         StartCoroutine("ToNextJump");
+    }
+
+    IEnumerator WallJumpBehaviour() {
+        inJump = true;
+
+        jumpGravity = wallJump.jumpGravity;
+        gravityForce.y = wallJump.iniJumpVelocity;
+        gravityForce += wallJumpHit.normal * wallJump.iniJumpVelocity;
+        rotationSpeed = 0;
+        playerManager.GetAnimationManager();//walljump
+
+        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded || OnWall());
+
+        gravityForce = Vector3.zero;
+        rotationSpeed = normalRotationSpeed;
+        inJump = false;
     }
 
     int SetJump(){

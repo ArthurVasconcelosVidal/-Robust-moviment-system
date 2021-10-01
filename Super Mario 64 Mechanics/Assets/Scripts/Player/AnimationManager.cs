@@ -28,4 +28,7 @@ public class AnimationManager : MonoBehaviour{
     public void HalfTurnAnimation() {
         animator.SetTrigger("Turn180");
     }
+    public void onWallAnimation(bool state) {
+        animator.SetBool("InWall", state);
+    }
 }
