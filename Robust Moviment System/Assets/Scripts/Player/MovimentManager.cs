@@ -155,12 +155,13 @@ public class MovimentManager : MonoBehaviour{
 
     bool OnWall() {
         float onWallRotationSpeed = 50;
-        float offSet = 0.05f;
+        float offSet = 1;
 
         if (Physics.Raycast(transform.position, finalDirection, out wallJumpHit, playerManager.GetCharacterController().bounds.extents.x + offSet)){
             MeshRotation(-wallJumpHit.normal, onWallRotationSpeed);
             playerManager.GetAnimationManager().OnWallAnimation(true);
-            canMove = false;
+            if (wallJumpHit.distance < 0.05f) canMove = false;
+
             return true;
         }
         else
