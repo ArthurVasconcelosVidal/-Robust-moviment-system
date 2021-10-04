@@ -30,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "RunButton",
+                    "name": "WestButton",
                     "type": "Button",
                     "id": "202adf05-83e6-47ca-b104-5a33a5ee3c1b",
                     "expectedControlType": "Button",
@@ -44,7 +44,7 @@
                     "id": "236fd606-9eb0-4821-bfd2-8a029f58ad7d",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "StickDeadzone(min=0.3)",
+                    "processors": "",
                     "groups": "",
                     "action": "LeftStick",
                     "isComposite": false,
@@ -134,7 +134,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RunButton",
+                    "action": "WestButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -145,7 +145,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RunButton",
+                    "action": "WestButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c466a25-f111-4d25-bc9a-f5fd5b944bf1",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WestButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e616e5f4-f079-47fb-bdbb-317075a06e5b",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WestButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

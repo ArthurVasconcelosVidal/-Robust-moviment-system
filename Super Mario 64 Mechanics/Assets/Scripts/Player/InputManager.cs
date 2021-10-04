@@ -8,7 +8,9 @@ public class InputManager : MonoBehaviour {
     InputControl inputControl;
     [SerializeField] Vector2 leftStick; //Serialized for Debug
     [SerializeField] Vector2 rightStick; //Serialized for Debug
+    [SerializeField] bool stickPerforming; //Serialized for Debug
     bool isActionPressed;
+    bool isWestPressed;
 
     void Awake() {
         inputControl = new InputControl();
@@ -16,9 +18,14 @@ public class InputManager : MonoBehaviour {
         //LeftStick
         inputControl.Moviment.LeftStick.performed += ctx => {
             leftStick = ctx.ReadValue<Vector2>();
+            stickPerforming = leftStick.x != 0 || leftStick.y != 0;
         };
         inputControl.Moviment.LeftStick.canceled += ctx => {
             leftStick = ctx.ReadValue<Vector2>();
+            stickPerforming = false;
+        };
+        inputControl.Moviment.LeftStick.started += ctx => {
+            playerManager.GetMovimentManager().StartMovimentProgression();
         };
 
         //RightStick
@@ -38,7 +45,13 @@ public class InputManager : MonoBehaviour {
             isActionPressed = false;
         };
 
-
+        //WestButton
+        inputControl.Moviment.WestButton.started += ctx =>{
+            isWestPressed = true;
+        };
+        inputControl.Moviment.WestButton.canceled += ctx => {
+            isWestPressed = false;
+        };
     }
 
     void OnEnable() {
@@ -59,5 +72,9 @@ public class InputManager : MonoBehaviour {
 
     public bool IsActionButton() {
         return isActionPressed;
+    }
+
+    public bool IsWestButton() {
+        return isWestPressed;
     }
 }

@@ -43,7 +43,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""RunButton"",
+                    ""name"": ""WestButton"",
                     ""type"": ""Button"",
                     ""id"": ""202adf05-83e6-47ca-b104-5a33a5ee3c1b"",
                     ""expectedControlType"": ""Button"",
@@ -57,7 +57,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""id"": ""236fd606-9eb0-4821-bfd2-8a029f58ad7d"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone(min=0.3)"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""LeftStick"",
                     ""isComposite"": false,
@@ -147,7 +147,7 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RunButton"",
+                    ""action"": ""WestButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -158,7 +158,29 @@ public class @InputControl : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RunButton"",
+                    ""action"": ""WestButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c466a25-f111-4d25-bc9a-f5fd5b944bf1"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WestButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e616e5f4-f079-47fb-bdbb-317075a06e5b"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""WestButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -238,7 +260,7 @@ public class @InputControl : IInputActionCollection, IDisposable
         m_Moviment_LeftStick = m_Moviment.FindAction("LeftStick", throwIfNotFound: true);
         m_Moviment_RightSitck = m_Moviment.FindAction("RightSitck", throwIfNotFound: true);
         m_Moviment_ActionButton = m_Moviment.FindAction("ActionButton", throwIfNotFound: true);
-        m_Moviment_RunButton = m_Moviment.FindAction("RunButton", throwIfNotFound: true);
+        m_Moviment_WestButton = m_Moviment.FindAction("WestButton", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -291,7 +313,7 @@ public class @InputControl : IInputActionCollection, IDisposable
     private readonly InputAction m_Moviment_LeftStick;
     private readonly InputAction m_Moviment_RightSitck;
     private readonly InputAction m_Moviment_ActionButton;
-    private readonly InputAction m_Moviment_RunButton;
+    private readonly InputAction m_Moviment_WestButton;
     public struct MovimentActions
     {
         private @InputControl m_Wrapper;
@@ -299,7 +321,7 @@ public class @InputControl : IInputActionCollection, IDisposable
         public InputAction @LeftStick => m_Wrapper.m_Moviment_LeftStick;
         public InputAction @RightSitck => m_Wrapper.m_Moviment_RightSitck;
         public InputAction @ActionButton => m_Wrapper.m_Moviment_ActionButton;
-        public InputAction @RunButton => m_Wrapper.m_Moviment_RunButton;
+        public InputAction @WestButton => m_Wrapper.m_Moviment_WestButton;
         public InputActionMap Get() { return m_Wrapper.m_Moviment; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -318,9 +340,9 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @ActionButton.started -= m_Wrapper.m_MovimentActionsCallbackInterface.OnActionButton;
                 @ActionButton.performed -= m_Wrapper.m_MovimentActionsCallbackInterface.OnActionButton;
                 @ActionButton.canceled -= m_Wrapper.m_MovimentActionsCallbackInterface.OnActionButton;
-                @RunButton.started -= m_Wrapper.m_MovimentActionsCallbackInterface.OnRunButton;
-                @RunButton.performed -= m_Wrapper.m_MovimentActionsCallbackInterface.OnRunButton;
-                @RunButton.canceled -= m_Wrapper.m_MovimentActionsCallbackInterface.OnRunButton;
+                @WestButton.started -= m_Wrapper.m_MovimentActionsCallbackInterface.OnWestButton;
+                @WestButton.performed -= m_Wrapper.m_MovimentActionsCallbackInterface.OnWestButton;
+                @WestButton.canceled -= m_Wrapper.m_MovimentActionsCallbackInterface.OnWestButton;
             }
             m_Wrapper.m_MovimentActionsCallbackInterface = instance;
             if (instance != null)
@@ -334,9 +356,9 @@ public class @InputControl : IInputActionCollection, IDisposable
                 @ActionButton.started += instance.OnActionButton;
                 @ActionButton.performed += instance.OnActionButton;
                 @ActionButton.canceled += instance.OnActionButton;
-                @RunButton.started += instance.OnRunButton;
-                @RunButton.performed += instance.OnRunButton;
-                @RunButton.canceled += instance.OnRunButton;
+                @WestButton.started += instance.OnWestButton;
+                @WestButton.performed += instance.OnWestButton;
+                @WestButton.canceled += instance.OnWestButton;
             }
         }
     }
@@ -346,6 +368,6 @@ public class @InputControl : IInputActionCollection, IDisposable
         void OnLeftStick(InputAction.CallbackContext context);
         void OnRightSitck(InputAction.CallbackContext context);
         void OnActionButton(InputAction.CallbackContext context);
-        void OnRunButton(InputAction.CallbackContext context);
+        void OnWestButton(InputAction.CallbackContext context);
     }
 }
