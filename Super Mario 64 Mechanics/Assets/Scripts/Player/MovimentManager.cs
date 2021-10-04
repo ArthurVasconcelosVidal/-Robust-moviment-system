@@ -38,11 +38,11 @@ public class MovimentManager : MonoBehaviour{
     [SerializeField]Vector3 gravityForce;
 
     [Header("Moviment Variables")]
-    [SerializeField] AnimationCurve movimentProgressionCurve; //Tempo deve descrever o tempo da progressão e o outro eixo ira descrever a evaluação dessa progressão 
+    [SerializeField] AnimationCurve movimentProgressionCurve;  
     [SerializeField] float normalMovimentVelocity;
     [SerializeField] float runningMovimentVelocity;
     [SerializeField] [Range(0, 50)] float normalRotationSpeed = 25;
-    bool canMove = true;
+    [SerializeField] bool canMove = true;
     Vector3 finalDirection;
     [SerializeField] CharacterMovimentState characterState;
     bool isRunning;
@@ -63,7 +63,7 @@ public class MovimentManager : MonoBehaviour{
     bool inJump = false; 
     bool toNextJump = false; 
     JumpForces[] jumpsList = new JumpForces[3];
-    JumpForces wallJump = new JumpForces(1,7);
+    JumpForces wallJump = new JumpForces(0.5f,4);
 
     void Awake(){
         jumpsList[0] = new JumpForces(0.5f, 5); //Jump configuration
@@ -79,7 +79,13 @@ public class MovimentManager : MonoBehaviour{
 
         IsRunning();
 
-        if (characterState == CharacterMovimentState.onGround) playerManager.GetAnimationManager().SetOnGround();
+        if (characterState == CharacterMovimentState.onGround) { 
+            playerManager.GetAnimationManager().SetOnGround(true);
+            playerManager.GetAnimationManager().OnWallAnimation(false); 
+            canMove = true;
+        }
+        else playerManager.GetAnimationManager().SetOnGround(false);
+
         Vector3 moviment = Vector3.zero;
         Vector2 stickDirection = playerManager.GetInputManager().LeftStickPerforming();
         finalDirection = RelativeToCamDirection(stickDirection);
@@ -122,7 +128,7 @@ public class MovimentManager : MonoBehaviour{
                 break;
             case CharacterMovimentState.inJump:
                 float fallMultiplier = 1;
-                if ( !playerManager.GetInputManager().IsActionButton() && gravityForce.y > 0)  fallMultiplier = 1.8f;
+                if (!playerManager.GetInputManager().IsActionButton() && gravityForce.y > 0)  fallMultiplier = 1.8f;
                 gravityForce.y += jumpGravity * fallMultiplier * Time.fixedDeltaTime;
                 break;
             case CharacterMovimentState.isFalling:
@@ -139,7 +145,7 @@ public class MovimentManager : MonoBehaviour{
     void SetCharacterState(){
         if (playerManager.GetCharacterController().isGrounded && !inJump)
             characterState = CharacterMovimentState.onGround;
-        else if (OnWall())
+        else if (OnWall() && !inJump)
             characterState = CharacterMovimentState.inWall;
         else if (inJump)
             characterState = CharacterMovimentState.inJump;
@@ -150,17 +156,15 @@ public class MovimentManager : MonoBehaviour{
     bool OnWall() {
         float onWallRotationSpeed = 50;
         float offSet = 0.05f;
+
         if (Physics.Raycast(transform.position, finalDirection, out wallJumpHit, playerManager.GetCharacterController().bounds.extents.x + offSet)){
             MeshRotation(-wallJumpHit.normal, onWallRotationSpeed);
-            playerManager.GetAnimationManager().onWallAnimation(true);
+            playerManager.GetAnimationManager().OnWallAnimation(true);
             canMove = false;
             return true;
         }
-        else{
-            playerManager.GetAnimationManager().onWallAnimation(false);
-            canMove = true;
+        else
             return false;
-        }
     }
 
     void MeshRotation(Vector3 direction, float rotationSpeed) {
@@ -217,9 +221,9 @@ public class MovimentManager : MonoBehaviour{
 
         jumpGravity = wallJump.jumpGravity;
         gravityForce.y = wallJump.iniJumpVelocity;
-        gravityForce += wallJumpHit.normal * wallJump.iniJumpVelocity;
+        gravityForce += wallJumpHit.normal * wallJump.iniJumpVelocity; 
         rotationSpeed = 0;
-        playerManager.GetAnimationManager();//walljump
+        playerManager.GetAnimationManager().WallJumpAnimation();
 
         yield return new WaitForSeconds(0.1f);
         yield return new WaitUntil(() => playerManager.GetCharacterController().isGrounded || OnWall());

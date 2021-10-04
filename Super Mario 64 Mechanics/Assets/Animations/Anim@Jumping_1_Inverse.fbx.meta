@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: dbf245af0cdc9904da6a706124aaac4b
+guid: bb6962bc1eca91a488c0de03b3644c47
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Running Left Turn
+    second: Jumping_1_Inverse
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,20 +35,20 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Running Left Turn
+      name: Jumping_1_Inverse
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 23
+      lastFrame: 7
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 180
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
