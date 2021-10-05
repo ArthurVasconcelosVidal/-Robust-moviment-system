@@ -44,7 +44,7 @@ Material:
     - _Deph: -8.33
     - _Displacement: 0.5
     - _NormalStrength: 1
-    - _Smoathness: 1
+    - _Smoathness: 0.657
     - _Strengh: 0.113
     - _Strength: 0.034
     m_Colors:
