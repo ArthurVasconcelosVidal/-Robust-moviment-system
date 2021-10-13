@@ -42,7 +42,7 @@ public class MovimentManager : MonoBehaviour{
     [SerializeField] float normalMovimentVelocity;
     [SerializeField] float runningMovimentVelocity;
     [SerializeField] [Range(0, 50)] float normalRotationSpeed = 25;
-    [SerializeField] bool canMove = true;
+    bool canMove = true;
     Vector3 finalDirection;
     [SerializeField] CharacterMovimentState characterState;
     bool isRunning;

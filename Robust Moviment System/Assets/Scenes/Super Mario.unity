@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerManager: {fileID: 552605024}
-  groundedGravityForce: -0.5
+  groundedGravityForce: -10
   normalGravityForce: -60
   inWallGravityForce: -1.5
   maxGravityForce: 200
@@ -708,9 +708,9 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.2
-      inSlope: 0.8
-      outSlope: 0.8
+      value: 0.3
+      inSlope: 0.7
+      outSlope: 0.7
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -718,8 +718,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.8
-      outSlope: 0.8
+      inSlope: 0.7
+      outSlope: 0.7
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -730,9 +730,8 @@ MonoBehaviour:
   normalMovimentVelocity: 10
   runningMovimentVelocity: 20
   normalRotationSpeed: 8
-  canMove: 1
   characterState: 0
-  timeToResetJump: 0.2
+  timeToResetJump: 0.4
   toLastJumpMovVelocity: 0.8
   inJumpCharacterRotation: 2
   jumpGravity: 0
