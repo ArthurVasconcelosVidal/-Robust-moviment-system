@@ -1,3 +1,3 @@
-# Robust Moviment System based on Mario games
+# Moviment System Study based on Mario games
  
 Work in Progress
