@@ -1,4 +1,4 @@
-##  Moviment System Study based on Mario 64
+##  Movement System Study based on Mario 64
 
 Estudo de movimento baseado no jogo Super Mario 64
 
